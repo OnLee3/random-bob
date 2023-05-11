@@ -4,21 +4,20 @@
     <meta charset="UTF-8" />
     <title>Spin the Wheel</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <div id="app">
+      <input type="number" id="num-segments" min="1" max="12" value="6" />
+      <input
+        type="text"
+        id="segment-names"
+        placeholder="Enter segment names, separated by commas"
+      />
+      <button id="create-wheel">Create Wheel</button>
       <button id="spin-button">Spin the Wheel</button>
       <svg id="wheel" viewBox="-50 -50 100 100">
-        <path id="segment1" d="M0,-50 A50,50 0 0,1 43.3,-25" fill="#ff0000" />
-        <path id="segment2" d="M43.3,-25 A50,50 0 0,1 43.3,25" fill="#ff7f00" />
-        <path id="segment3" d="M43.3,25 A50,50 0 0,1 0,50" fill="#ffff00" />
-        <path id="segment4" d="M0,50 A50,50 0 0,1 -43.3,25" fill="#00ff00" />
-        <path
-          id="segment5"
-          d="M-43.3,25 A50,50 0 0,1 -43.3,-25"
-          fill="#0000ff"
-        />
-        <path id="segment6" d="M-43.3,-25 A50,50 0 0,1 0,-50" fill="#4B0082" />
+        <polygon id="pointer" points="-2,-50 0,-60 2,-50" fill="black" />
       </svg>
       <div id="result"></div>
     </div>
