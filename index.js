@@ -34,13 +34,24 @@ document.getElementById("create-wheel").addEventListener("click", function () {
   var pie = d3.pie().value(() => 1);
   var arc = d3.arc().innerRadius(0).outerRadius(50);
 
-  wheel
-    .selectAll("path")
-    .data(pie(data))
-    .enter()
-    .append("path")
+  var g = wheel.selectAll("g").data(pie(data)).enter().append("g");
+
+  g.append("path")
     .attr("fill", (d) => d.data.color)
     .attr("d", arc);
+
+  g.append("text")
+    .attr("transform", function (d) {
+      var _d = arc.centroid(d);
+      _d[0] *= 1.5; //multiply by a constant factor
+      _d[1] *= 1.5; //multiply by a constant factor
+      return "translate(" + _d + ")";
+    })
+    .attr("dy", ".50em")
+    .style("text-anchor", "middle")
+    .text(function (d) {
+      return d.data.name;
+    });
 });
 
 document.getElementById("spin-button").addEventListener("click", function () {
