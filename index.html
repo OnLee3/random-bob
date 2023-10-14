@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <title>Spin the Wheel</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="TweenMax.min.js"></script>
+    <script src="Winwheel.min.js"></script>
   </head>
   <body>
-    <div id="app">
-      <button id="spin-button">Spin the Wheel</button>
-      <svg id="wheel" viewBox="-50 -50 100 100">
-        <polygon id="pointer" points="-2,-50 0,-60 2,-50" fill="black" />
-      </svg>
-      <div id="result"></div>
-    </div>
+    <canvas
+      id="canvas"
+      width="1080"
+      height="1140"
+      data-responsiveMinWidth="180"
+      data-responsiveScaleHeight="true"
+      data-responsiveMargin="50"
+    ></canvas>
     <script src="index.js"></script>
   </body>
 </html>
