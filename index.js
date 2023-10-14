@@ -103,6 +103,7 @@ const winAnimation = () => {
 
   // Make the winning one yellow.
   wheel.segments[winningSegmentNumber].fillStyle = "yellow";
+  wheel.segments[winningSegmentNumber].textFontSize = 48;
 
   // Call draw function to render changes.
   wheel.draw();
